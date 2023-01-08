@@ -103,3 +103,4 @@ INSERT INTO univer(name, sdudents)
 VALUES ('manas', 2000);
 SELECT *
 FROM school;
+ddsds
