@@ -1,0 +1,47 @@
+postgres=# CREATE TABLE country2
+postgres-# (
+postgres(#     id              SMALLSERIAL PRIMARY KEY,
+postgres(#     name            VARCHAR(50) NOT NULL,
+postgres(#     how_many_cities INTEGER     NOT NULL
+postgres(# );
+CREATE TABLE
+postgres=# INSERT INTO country2(name, how_many_cities)
+postgres-# VALUES ('KURGISZTAN', 7),
+postgres-#        ('TADJIC', 3),
+postgres-#        ('USA', 53);
+INSERT 0 3
+postgres=# CREATE TABLE town2
+postgres-# (
+postgres(#     id         BIGSERIAL,
+postgres(#     name       VARCHAR(50) NOT NULL,
+postgres(#     country_id INTEGER REFERENCES country (id)
+postgres(# );
+CREATE TABLE
+postgres=# INSERT INTO town2(name, country_id)
+postgres-# VALUES ('BISHKEK', 1),
+postgres-#        ('BAPESH', 2),
+postgres-#        ('CHICAGO', 3);
+INSERT 0 3
+postgres=# CREATE TABLE student2
+postgres-# (
+postgres(#     id     SMALLSERIAL PRIMARY KEY,
+postgres(#     name   VARCHAR(50) NOT NULL,
+postgres(#     groups VARCHAR(20) NOT NULL
+postgres(# );
+CREATE TABLE
+postgres=# INSERT INTO student2(name, groups)
+postgres-# VALUES ('kutman1', 'java8'),
+postgres-#        ('kutman2', 'java9'),
+postgres-#        ('kutman3', 'java7');
+INSERT 0 3
+postgres=# SELECT *
+postgres-# FROM student2;
+ id |  name   | groups
+----+---------+--------
+  1 | kutman1 | java8
+  2 | kutman2 | java9
+  3 | kutman3 | java7
+(3 ёЄЁюъш)
+
+
+postgres=#

@@ -1,0 +1,105 @@
+CREATE TABLE country
+(
+    id              SMALLSERIAL PRIMARY KEY,
+    name            VARCHAR(50) NOT NULL,
+    how_many_cities INTEGER     NOT NULL
+);
+INSERT INTO country(name, how_many_cities)
+VALUES ('KURGISZTAN', 7),
+       ('TADJIC', 3),
+       ('USA', 53);
+CREATE TABLE town
+(
+    id         BIGSERIAL,
+    name       VARCHAR(50) NOT NULL,
+    country_id INTEGER REFERENCES country (id)
+);
+INSERT INTO town(name, country_id)
+VALUES ('BISHKEK', 1),
+       ('BAPESH', 2),
+       ('CHICAGO', 3);
+SELECT name
+FROM country;
+CREATE TABLE student
+(
+    id     SMALLSERIAL PRIMARY KEY,
+    name   VARCHAR(50) NOT NULL,
+    groups VARCHAR(20) NOT NULL
+);
+INSERT INTO student(name, groups)
+VALUES ('kutman1', 'java8'),
+       ('kutman2', 'java9'),
+       ('kutman3', 'java7');
+SELECT *
+FROM student;
+
+CREATE TABLE school
+(
+    id       SMALLSERIAL PRIMARY KEY,
+    name     VARCHAR(50) NOT NULL,
+    sdudents INTEGER     NOT NULL
+);
+INSERT INTO school(name, sdudents)
+VALUES ('school1', 300),
+       ('school2', 300),
+       ('school3', 200);
+SELECT *
+FROM school;
+CREATE TABLE countrys
+(
+    id              SMALLSERIAL PRIMARY KEY,
+    name            VARCHAR(50) NOT NULL,
+    how_many_cities INTEGER     NOT NULL
+);
+INSERT INTO countrys(name, how_many_cities)
+VALUES ('KURGISZTAN', 7),
+       ('TADJIC', 3),
+       ('USA', 53);
+CREATE TABLE towns
+(
+    id         BIGSERIAL,
+    name       VARCHAR(50) NOT NULL,
+    country_id INTEGER REFERENCES countrys (id)
+);
+INSERT INTO towns(name, country_id)
+VALUES ('BISHKEK', 1),
+       ('BAPESH', 2),
+       ('CHICAGO', 3);
+SELECT name
+FROM countrys;
+CREATE TABLE students
+(
+    id     SMALLSERIAL PRIMARY KEY,
+    name   VARCHAR(50) NOT NULL,
+    groups VARCHAR(20) NOT NULL
+);
+INSERT INTO students(name, groups)
+VALUES ('kutman1', 'java8'),
+       ('kutman2', 'java9'),
+       ('kutman3', 'java7');
+SELECT *
+FROM students;
+
+CREATE TABLE schools
+(
+    id       SMALLSERIAL PRIMARY KEY,
+    name     VARCHAR(50) NOT NULL,
+    sdudents INTEGER     NOT NULL
+);
+INSERT INTO schools(name, sdudents)
+VALUES ('school1', 300),
+       ('school2', 300),
+       ('school3', 200);
+SELECT *
+FROM school;
+
+CREATE TABLE univer
+(
+    id       SMALLSERIAL PRIMARY KEY,
+    name     VARCHAR(50) NOT NULL,
+    sdudents INTEGER     NOT NULL
+);
+INSERT INTO univer(name, sdudents)
+VALUES ('manas', 2000);
+SELECT *
+FROM school;
